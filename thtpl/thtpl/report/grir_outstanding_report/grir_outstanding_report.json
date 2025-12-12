@@ -1,0 +1,23 @@
+{
+    "doctype": "Report",
+    "name": "GRIR Outstanding Report",
+    "ref_doctype": "Purchase Receipt",
+    "report_type": "Query Report",
+    "is_standard": "Yes",
+    "module": "THTPL",
+    "idx": 0,
+    "json_fields": null,
+    "prepared_report": 0,
+    "query": null,
+    "roles": [
+        {
+            "role": "Accounts Manager"
+        },
+        {
+            "role": "Stock Manager"
+        },
+        {
+            "role": "System Manager"
+        }
+    ]
+}

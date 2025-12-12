@@ -1,0 +1,53 @@
+{
+ "allow_copy": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "creation": "2025-12-12 14:15:01.177",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "inspection_date",
+   "fieldtype": "Date",
+   "label": "Inspection Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspected_by",
+   "fieldtype": "Link",
+   "label": "Inspected By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Text",
+   "label": "Condition/Notes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "action_taken",
+   "fieldtype": "Text",
+   "label": "Action Taken"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2025-12-12 14:15:01.177",
+ "modified_by": "Administrator",
+ "module": "thtpl",
+ "name": "Equipment Inspection Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "read_only": 0,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 0,
+ "track_seen": 0,
+ "track_views": 0,
+ "istable": 1
+}

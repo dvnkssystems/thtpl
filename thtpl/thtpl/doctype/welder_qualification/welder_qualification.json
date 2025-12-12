@@ -1,0 +1,111 @@
+{
+ "allow_copy": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "creation": "2025-12-12 14:15:01.175",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "welder",
+   "fieldtype": "Link",
+   "label": "Welder (Employee)",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qualification_id",
+   "fieldtype": "Data",
+   "label": "Qualification ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "material_group",
+   "fieldtype": "Data",
+   "label": "Material Group Qualified For",
+   "reqd": 1
+  },
+  {
+   "fieldname": "thickness_range",
+   "fieldtype": "Data",
+   "label": "Thickness Range Qualified For"
+  },
+  {
+   "fieldname": "qualification_date",
+   "fieldtype": "Date",
+   "label": "Qualification Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "continuity_record",
+   "fieldtype": "Table",
+   "label": "Welding Continuity Record",
+   "options": "Welding Continuity Log"
+  },
+  {
+   "fieldname": "certificate_attachment",
+   "fieldtype": "Attach",
+   "label": "Certificate Attachment"
+  }
+ ],
+ "is_submittable": 0,
+ "module": "thtpl",
+ "name": "Welder Qualification",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "read_only": 0,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 0,
+ "track_views": 0,
+ "naming_series": "WQD-"
+}

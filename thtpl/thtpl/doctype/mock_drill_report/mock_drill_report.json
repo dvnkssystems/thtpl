@@ -1,0 +1,121 @@
+{
+ "allow_copy": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "autoname": "format:MDR-{drill_date}-{#####}",
+ "creation": "2025-12-12 14:15:01.178",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "drill_date",
+   "fieldtype": "Date",
+   "label": "Drill Date",
+   "default": "Today",
+   "reqd": 1
+  },
+  {
+   "fieldname": "drill_type",
+   "fieldtype": "Select",
+   "label": "Drill Type",
+   "options": "Fire\nEvacuation\nFirst Aid\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "scenario",
+   "fieldtype": "Text",
+   "label": "Scenario/Objective",
+   "reqd": 1
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Drill Participant"
+  },
+  {
+   "fieldname": "observations",
+   "fieldtype": "Text",
+   "label": "Observations"
+  },
+  {
+   "fieldname": "areas_for_improvement",
+   "fieldtype": "Text",
+   "label": "Areas for Improvement"
+  },
+  {
+   "fieldname": "recommendations",
+   "fieldtype": "Text",
+   "label": "Recommendations"
+  },
+  {
+   "fieldname": "report_by",
+   "fieldtype": "Link",
+   "label": "Reported By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2025-12-12 14:15:01.178",
+ "modified_by": "Administrator",
+ "module": "thtpl",
+ "name": "Mock Drill Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Safety User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "read_only": 0,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 0,
+ "track_views": 0,
+ "naming_series": "MDR-"
+}

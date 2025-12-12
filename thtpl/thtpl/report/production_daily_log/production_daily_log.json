@@ -1,0 +1,20 @@
+{
+    "doctype": "Report",
+    "name": "Production Daily Log",
+    "ref_doctype": "Work Order",
+    "report_type": "Script Report",
+    "is_standard": "Yes",
+    "module": "THTPL",
+    "idx": 0,
+    "json_fields": null,
+    "prepared_report": 0,
+    "query": null,
+    "roles": [
+        {
+            "role": "Production Manager"
+        },
+        {
+            "role": "System Manager"
+        }
+    ]
+}

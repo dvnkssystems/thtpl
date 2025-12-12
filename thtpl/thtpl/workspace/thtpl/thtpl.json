@@ -1,0 +1,134 @@
+{   
+    "app":"thtpl",
+    "charts":[],
+    "doctype": "Workspace",
+    "name": "THTPL Operations",
+    "title": "THTPL Operations",
+    "parent_workspace": "Manufacturing",
+    "content": [
+        {
+            "type": "Header",
+            "data": {
+                "label": "Quality Management"
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Quality Control Records",
+                "links": [
+                    {"label": "Quality Control Plan", "type": "doctype", "name": "Quality Control Plan"},
+                    {"label": "Inspection Control Checklist", "type": "doctype", "name": "Quality Inspection Template"},
+                    {"label": "Deviation Note", "type": "doctype", "name": "Deviation Note"},
+                    {"label": "Out of Calibration Report", "type": "doctype", "name": "Out of Calibration Report"},
+                    {"label": "Calibration Record", "type": "doctype", "name": "Calibration Record"}
+                ]
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Supplier Quality & Audits",
+                "links": [
+                    {"label": "External Provider Audit Plan", "type": "doctype", "name": "External Provider Audit Plan"},
+                    {"label": "External Provider Audit Report", "type": "doctype", "name": "External Provider Audit Report"},
+                    {"label": "Non Conformity Detail", "type": "doctype", "name": "Non Conformity Detail"}
+                ]
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Welding Qualifications",
+                "links": [
+                    {"label": "Welder Qualification", "type": "doctype", "name": "Welder Qualification"}
+                ]
+            }
+        },
+        {
+            "type": "Header",
+            "data": {
+                "label": "Production & Maintenance"
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Production Planning & Reports",
+                "links": [
+                    {"label": "Standard Operating Procedure", "type": "doctype", "name": "Standard Operating Procedure"},
+                    {"label": "Production Daily Log", "type": "report", "name": "Production Daily Log"},
+                    {"label": "Heat Treatment Procedure", "type": "doctype", "name": "Heat Treatment Procedure"}
+                ]
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Maintenance & Safety",
+                "links": [
+                    {"label": "Safety Incident", "type": "doctype", "name": "Safety Incident"},
+                    {"label": "Safety Equipment Register", "type": "doctype", "name": "Safety Equipment Register"},
+                    {"label": "Mock Drill Report", "type": "doctype", "name": "Mock Drill Report"}
+                ]
+            }
+        },
+        {
+            "type": "Header",
+            "data": {
+                "label": "Engineering & Documentation"
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Design Management",
+                "links": [
+                    {"label": "Design Change Request", "type": "doctype", "name": "Design Change Request"},
+                    {"label": "Design Change Note", "type": "doctype", "name": "Design Change Note"}
+                ]
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Document Control",
+                "links": [
+                    {"label": "Document Register", "type": "doctype", "name": "Document Register"}
+                ]
+            }
+        },
+        {
+            "type": "Header",
+            "data": {
+                "label": "Sales & Customer"
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Sales & Feedback",
+                "links": [
+                    {"label": "Tender", "type": "doctype", "name": "Tender"},
+                    {"label": "Customer Feedback", "type": "doctype", "name": "Customer Feedback"}
+                ]
+            }
+        },
+        {
+            "type": "Header",
+            "data": {
+                "label": "Inventory & Financial Reports"
+            }
+        },
+        {
+            "type": "Card",
+            "data": {
+                "label": "Inventory & Reconciliation",
+                "links": [
+                    {"label": "GRIR Outstanding Report", "type": "report", "name": "GRIR Outstanding Report"},
+                    {"label": "Batch Expiry Report", "type": "report", "name": "Batch Expiry Report"}
+                ]
+            }
+        }
+    ]
+}

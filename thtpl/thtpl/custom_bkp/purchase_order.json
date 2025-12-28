@@ -1,0 +1,76 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Purchase Order",
+      "fieldname": "quality_section",
+      "label": "Quality & Verification",
+      "fieldtype": "Section Break",
+      "insert_after": "items"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "material_stock_verified",
+      "label": "Material Stock Verified",
+      "fieldtype": "Check",
+      "insert_after": "quality_section"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "stock_verification_date",
+      "label": "Stock Verification Date",
+      "fieldtype": "Date",
+      "insert_after": "material_stock_verified"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "quality_inspection_required",
+      "label": "Quality Inspection Required",
+      "fieldtype": "Check",
+      "default": 1,
+      "insert_after": "stock_verification_date"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "supplier_performance_score",
+      "label": "Supplier Performance Score",
+      "fieldtype": "Float",
+      "read_only": 1,
+      "insert_after": "quality_inspection_required"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "material_specification_reference",
+      "label": "Material Specification Reference",
+      "fieldtype": "Link",
+      "options": "Item",
+      "insert_after": "supplier_performance_score"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "asme_standard_reference",
+      "label": "ASME Standard Reference",
+      "fieldtype": "Data",
+      "insert_after": "material_specification_reference"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "mtc_required",
+      "label": "Material Test Certificate Required",
+      "fieldtype": "Check",
+      "insert_after": "asme_standard_reference"
+    },
+    {
+      "dt": "Purchase Order",
+      "fieldname": "grir_link",
+      "label": "Goods Receipt & Inspection Report",
+      "fieldtype": "Link",
+      "options": "Purchase Receipt",
+      "insert_after": "mtc_required"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Purchase Order",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

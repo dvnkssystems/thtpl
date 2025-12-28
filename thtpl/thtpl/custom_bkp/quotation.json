@@ -1,0 +1,60 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Quotation",
+      "fieldname": "enquiry_checklist_section",
+      "label": "Enquiry Review Checklist",
+      "fieldtype": "Section Break",
+      "insert_after": "items"
+    },
+    {
+      "dt": "Quotation",
+      "fieldname": "enquiry_checklist_items",
+      "label": "Enquiry Items",
+      "fieldtype": "Table",
+      "options": "Enquiry Checklist Item",
+      "insert_after": "enquiry_checklist_section"
+    },
+    {
+      "dt": "Quotation",
+      "fieldname": "review_completed_by",
+      "label": "Review Completed By",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "insert_after": "enquiry_checklist_items"
+    },
+    {
+      "dt": "Quotation",
+      "fieldname": "review_date",
+      "label": "Review Date",
+      "fieldtype": "Date",
+      "insert_after": "review_completed_by"
+    },
+    {
+      "dt": "Quotation",
+      "fieldname": "technical_compliance",
+      "label": "Technical Compliance Verified",
+      "fieldtype": "Check",
+      "insert_after": "review_date"
+    },
+    {
+      "dt": "Quotation",
+      "fieldname": "design_feasibility",
+      "label": "Design Feasibility Confirmed",
+      "fieldtype": "Check",
+      "insert_after": "technical_compliance"
+    },
+    {
+      "dt": "Quotation",
+      "fieldname": "asme_requirements_met",
+      "label": "ASME Requirements Met",
+      "fieldtype": "Check",
+      "insert_after": "design_feasibility"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Quotation",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

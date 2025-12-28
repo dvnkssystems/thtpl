@@ -1,0 +1,91 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Supplier",
+      "fieldname": "supplier_quality_section",
+      "label": "Quality & Performance",
+      "fieldtype": "Section Break",
+      "insert_after": "supplier_name"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "supplier_category",
+      "label": "Supplier Category",
+      "fieldtype": "Select",
+      "options": "Manufacturer\nTrader\nService Provider\nConsumables Supplier",
+      "insert_after": "supplier_quality_section"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "is_approved",
+      "label": "Approved Supplier",
+      "fieldtype": "Check",
+      "insert_after": "supplier_category"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "approval_date",
+      "label": "Approval Date",
+      "fieldtype": "Date",
+      "depends_on": "eval:doc.is_approved",
+      "insert_after": "is_approved"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "quality_rating",
+      "label": "Quality Rating (1-5)",
+      "fieldtype": "Rating",
+      "insert_after": "approval_date"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "performance_score",
+      "label": "Overall Performance Score",
+      "fieldtype": "Float",
+      "read_only": 1,
+      "insert_after": "quality_rating"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "last_audit_date",
+      "label": "Last Audit Date",
+      "fieldtype": "Date",
+      "insert_after": "performance_score"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "next_audit_date",
+      "label": "Next Audit Date",
+      "fieldtype": "Date",
+      "insert_after": "last_audit_date"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "audit_plan_reference",
+      "label": "Audit Plan Reference",
+      "fieldtype": "Link",
+      "options": "Supplier Audit",
+      "insert_after": "next_audit_date"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "corrective_action_pending",
+      "label": "Corrective Action Pending",
+      "fieldtype": "Check",
+      "insert_after": "audit_plan_reference"
+    },
+    {
+      "dt": "Supplier",
+      "fieldname": "certifications",
+      "label": "Quality Certifications",
+      "fieldtype": "Table",
+      "options": "Supplier Certification",
+      "insert_after": "corrective_action_pending"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Supplier",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

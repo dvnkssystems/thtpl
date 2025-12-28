@@ -1,0 +1,78 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Work Order",
+      "fieldname": "production_planning_section",
+      "label": "Production Planning",
+      "fieldtype": "Section Break",
+      "insert_after": "bom_no"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "project_code",
+      "label": "Project Code (MSN)",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "insert_after": "production_planning_section"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "sales_order_link",
+      "label": "Sales Order Link",
+      "fieldtype": "Link",
+      "options": "Sales Order",
+      "insert_after": "project_code"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "manufacturing_processes",
+      "label": "Manufacturing Processes",
+      "fieldtype": "Link",
+      "options": "Routing",
+      "insert_after": "sales_order_link"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "quality_status",
+      "label": "Quality Status",
+      "fieldtype": "Select",
+      "options": "Pending\nIn Progress\nAccepted\nRejected\nUnder Review",
+      "insert_after": "manufacturing_processes"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "qc_plan_reference",
+      "label": "Quality Control Plan Reference",
+      "fieldtype": "Link",
+      "options": "Quality Control Plan",
+      "insert_after": "quality_status"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "inspection_plan_checklist",
+      "label": "Inspection Checklist Completion",
+      "fieldtype": "Table",
+      "options": "Inspection Checklist Item",
+      "insert_after": "qc_plan_reference"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "expected_completion_date",
+      "label": "Expected Completion Date",
+      "fieldtype": "Date",
+      "insert_after": "inspection_plan_checklist"
+    },
+    {
+      "dt": "Work Order",
+      "fieldname": "actual_completion_date",
+      "label": "Actual Completion Date",
+      "fieldtype": "Date",
+      "insert_after": "expected_completion_date"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Work Order",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

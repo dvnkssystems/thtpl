@@ -2,11 +2,12 @@
  "allow_copy": 0,
  "allow_import": 0,
  "allow_rename": 0,
- "creation": "2025-12-12 14:15:01.175",
+ "autoname": "format:WQD-{welder}-{qualification_id}",
+ "creation": "2025-12-16 11:40:26.689",
  "custom": 0,
  "docstatus": 0,
  "doctype": "DocType",
- "editable_grid": 0,
+ "editable_grid": 1,
  "engine": "InnoDB",
  "fields": [
   {
@@ -58,7 +59,11 @@
    "label": "Certificate Attachment"
   }
  ],
+ "index_web_pages_for_search": 1,
  "is_submittable": 0,
+ "links": [],
+ "modified": "2025-12-16 11:40:26.689",
+ "modified_by": "Administrator",
  "module": "thtpl",
  "name": "Welder Qualification",
  "owner": "Administrator",

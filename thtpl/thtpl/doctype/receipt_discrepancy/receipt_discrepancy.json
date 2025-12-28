@@ -1,0 +1,57 @@
+{
+  "allow_copy": 0,
+  "allow_import": 0,
+  "allow_rename": 0,
+  "creation": "2025-12-16 11:40:26.688",
+  "custom": 0,
+  "docstatus": 0,
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "label": "Item Code",
+      "fieldtype": "Link",
+      "options": "Item"
+    },
+    {
+      "fieldname": "expected_qty",
+      "label": "Expected Quantity",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "received_qty",
+      "label": "Received Quantity",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "discrepancy_type",
+      "label": "Discrepancy Type",
+      "fieldtype": "Select",
+      "options": "Qty Shortage\nQty Excess\nDamaged\nWrong Item\nDefective\nOther"
+    },
+    {
+      "fieldname": "action_taken",
+      "label": "Action Taken",
+      "fieldtype": "Data"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 0,
+  "links": [],
+  "modified": "2025-12-16 11:40:26.688",
+  "modified_by": "Administrator",
+  "module": "thtpl",
+  "name": "Receipt Discrepancy",
+  "owner": "Administrator",
+  "permissions": [],
+  "quick_entry": 1,
+  "read_only": 0,
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 0,
+  "track_seen": 0,
+  "track_views": 0,
+  "istable": 1
+}

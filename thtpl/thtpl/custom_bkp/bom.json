@@ -1,0 +1,86 @@
+{
+  "custom_fields": [
+    {
+      "dt": "BOM",
+      "fieldname": "bom_control_section",
+      "label": "BOM Control",
+      "fieldtype": "Section Break",
+      "insert_after": "docstatus"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "bom_revision",
+      "label": "BOM Revision",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "insert_after": "bom_control_section"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "design_input_reference",
+      "label": "Design Input Reference",
+      "fieldtype": "Link",
+      "options": "Design Input",
+      "insert_after": "bom_revision"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "sales_order_reference",
+      "label": "Sales Order Reference",
+      "fieldtype": "Link",
+      "options": "Sales Order",
+      "insert_after": "design_input_reference"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "approved_drawing_reference",
+      "label": "Approved Drawing Reference",
+      "fieldtype": "Attach",
+      "insert_after": "sales_order_reference"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "design_approval_status",
+      "label": "Design Approval Status",
+      "fieldtype": "Select",
+      "options": "Pending\nApproved\nRejected\nUnder Review",
+      "default": "Pending",
+      "insert_after": "approved_drawing_reference"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "design_approved_by",
+      "label": "Design Approved By",
+      "fieldtype": "Link",
+      "options": "User",
+      "insert_after": "design_approval_status"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "design_approval_date",
+      "label": "Design Approval Date",
+      "fieldtype": "Date",
+      "insert_after": "design_approved_by"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "change_reason",
+      "label": "Reason for Change (if revision)",
+      "fieldtype": "Text",
+      "insert_after": "design_approval_date"
+    },
+    {
+      "dt": "BOM",
+      "fieldname": "bom_creation_date",
+      "label": "BOM Creation Date",
+      "fieldtype": "Date",
+      "read_only": 1,
+      "insert_after": "change_reason"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "BOM",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

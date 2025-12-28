@@ -1,0 +1,84 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "grir_section",
+      "label": "Goods Receipt & Inspection",
+      "fieldtype": "Section Break",
+      "insert_after": "receipt_date"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "grir_number",
+      "label": "GRIR Number",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "insert_after": "grir_section"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "material_inspection_status",
+      "label": "Material Inspection Status",
+      "fieldtype": "Select",
+      "options": "Pending\nInspected\nPartially Inspected\nRejected\nAccepted with Deviation",
+      "insert_after": "grir_number"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "quality_inspected_by",
+      "label": "Quality Inspected By",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "insert_after": "material_inspection_status"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "inspection_date",
+      "label": "Inspection Date",
+      "fieldtype": "Date",
+      "insert_after": "quality_inspected_by"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "visual_inspection_status",
+      "label": "Visual Inspection Status",
+      "fieldtype": "Select",
+      "options": "Pass\nFail\nNA",
+      "insert_after": "inspection_date"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "mtc_attached",
+      "label": "Material Test Certificate Attached",
+      "fieldtype": "Check",
+      "insert_after": "visual_inspection_status"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "mtc_document",
+      "label": "Material Test Certificate",
+      "fieldtype": "Attach",
+      "insert_after": "mtc_attached"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "inspection_remarks",
+      "label": "Inspection Remarks",
+      "fieldtype": "Text",
+      "insert_after": "mtc_document"
+    },
+    {
+      "dt": "Purchase Receipt",
+      "fieldname": "discrepancies",
+      "label": "Discrepancies Found",
+      "fieldtype": "Table",
+      "options": "Receipt Discrepancy",
+      "insert_after": "inspection_remarks"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Purchase Receipt",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

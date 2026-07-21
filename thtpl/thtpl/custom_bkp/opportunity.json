@@ -1,0 +1,67 @@
+{  "custom_fields": [
+  {
+    "dt": "Opportunity",
+    "fieldname": "tender_title",
+    "label": "Tender Title",
+    "fieldtype": "Data",
+    "insert_after": "title"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "tender_reference_number",
+    "label": "Tender Reference Number",
+    "fieldtype": "Data",
+    "insert_after": "tender_title"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "issuing_authority",
+    "label": "Issuing Authority",
+    "fieldtype": "Data",
+    "insert_after": "tender_reference_number"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "tender_category",
+    "label": "Tender Category/Type",
+    "fieldtype": "Select",
+    "options": "Equipment\nServices\nSupply\nTechnical Consultation\nOther",
+    "insert_after": "issuing_authority"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "submission_method",
+    "label": "Submission Method",
+    "fieldtype": "Select",
+    "options": "Online\nEmail\nHard Copy\nPortal",
+    "insert_after": "tender_category"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "tender_closing_date",
+    "label": "Tender Closing Date",
+    "fieldtype": "Date",
+    "insert_after": "submission_method"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "tender_doc_reference",
+    "label": "Tender Document",
+    "fieldtype": "Attach",
+    "insert_after": "tender_closing_date"
+  },
+  {
+    "dt": "Opportunity",
+    "fieldname": "opportunity_status_thtpl",
+    "label": "Opportunity Status (THTPL)",
+    "fieldtype": "Select",
+    "options": "Lead\nQualified\nProposal Submitted\nNegotiation\nWon\nLost\nOn Hold",
+    "insert_after": "tender_doc_reference"
+  }
+],
+  "custom_perms": [],
+  "doctype": "Opportunity",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

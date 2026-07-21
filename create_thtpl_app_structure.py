@@ -1175,21 +1175,6 @@ def get_data(filters):
         conditions_clause = ""
 
     data = frappe.db.sql(f"""
-        SELECT
-            DATE(wo.creation) as date,
-            wo.name as work_order,
-            wo.item_code,
-            wo.item_name,
-            wo.produced_qty,
-            wo.rejected_quantity as rejected_qty,
-            wo.rejection_reason,
-            wo.status
-        FROM
-            `tabWork Order` wo
-        WHERE
-            wo.docstatus = 1 {conditions_clause}
-        ORDER BY
-            wo.creation DESC
     """, as_dict=1)
     return data
         """,

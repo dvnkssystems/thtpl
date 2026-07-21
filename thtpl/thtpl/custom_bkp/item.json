@@ -1,0 +1,86 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Item",
+      "fieldname": "asme_section",
+      "label": "ASME Compliance Section",
+      "fieldtype": "Section Break",
+      "insert_after": "description"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "asme_compliance_required",
+      "label": "ASME Compliance Required",
+      "fieldtype": "Check",
+      "insert_after": "asme_section"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "asme_standard",
+      "label": "ASME Standard",
+      "fieldtype": "Select",
+      "options": "ASME Section VIII Division 1\nASME Section VIII Division 2\nASME Section VIII Division 3\nASME Section IV\nOther",
+      "depends_on": "eval:doc.asme_compliance_required",
+      "insert_after": "asme_compliance_required"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "asme_edition",
+      "label": "ASME Edition",
+      "fieldtype": "Select",
+      "options": "2019\n2021\n2023",
+      "depends_on": "eval:doc.asme_compliance_required",
+      "insert_after": "asme_standard"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "design_pressure",
+      "label": "Design Pressure (kg/cm²)",
+      "fieldtype": "Float",
+      "insert_after": "material_specification"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "design_temperature",
+      "label": "Design Temperature (°C)",
+      "fieldtype": "Float",
+      "insert_after": "design_pressure"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "capacity_rating",
+      "label": "Capacity Rating",
+      "fieldtype": "Data",
+      "insert_after": "design_temperature"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "item_revision",
+      "label": "Item Revision",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "insert_after": "capacity_rating"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "drawing_reference",
+      "label": "Drawing Reference",
+      "fieldtype": "Table",
+      "options": "Transmittal Document",
+      "insert_after": "item_revision"
+    },
+    {
+      "dt": "Item",
+      "fieldname": "last_updated_revision_date",
+      "label": "Last Updated Revision Date",
+      "fieldtype": "Date",
+      "read_only": 1,
+      "insert_after": "drawing_reference"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Item",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

@@ -1,0 +1,59 @@
+{
+  "custom_fields": [
+    {
+      "dt": "Lead",
+      "fieldname": "site_visit_record",
+      "label": "Site Visit Record",
+      "fieldtype": "Link",
+      "options": "Site Visit",
+      "read_only": 0,
+      "insert_after": "email"
+    },
+    {
+      "dt": "Lead",
+      "fieldname": "visit_date",
+      "label": "Last Visit Date",
+      "fieldtype": "Date",
+      "insert_after": "site_visit_record"
+    },
+
+    {
+      "dt": "Lead",
+      "fieldname": "marketing_executive",
+      "label": "Marketing Executive",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "insert_after": "visit_date"
+    },
+
+    {
+      "dt": "Lead",
+      "fieldname": "follow_up_date",
+      "label": "Follow-up Date",
+      "fieldtype": "Date",
+      "insert_after": "marketing_executive"
+    },
+
+    {
+      "dt": "Lead",
+      "fieldname": "site_notes",
+      "label": "Site Visit Notes",
+      "fieldtype": "Text",
+      "insert_after": "follow_up_date"
+    },
+
+    {
+      "dt": "Lead",
+      "fieldname": "tender_information",
+      "label": "Tender Information",
+      "fieldtype": "Link",
+      "options": "Opportunity",
+      "insert_after": "site_notes"
+    }
+  ],
+  "custom_perms": [],
+  "doctype": "Lead",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

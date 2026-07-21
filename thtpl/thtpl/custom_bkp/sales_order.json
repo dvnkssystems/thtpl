@@ -1,0 +1,98 @@
+{  "custom_fields": [
+  {
+    "dt": "Sales Order",
+    "fieldname": "order_acceptance_section",
+    "label": "Order Acceptance Details",
+    "fieldtype": "Section Break",
+    "insert_after": "title"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "order_acceptance_number",
+    "label": "Order Acceptance Number",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "insert_after": "order_acceptance_section"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "order_acceptance_date",
+    "label": "Order Acceptance Date",
+    "fieldtype": "Date",
+    "insert_after": "order_acceptance_number"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "design_input_reference",
+    "label": "Design Input Reference",
+    "fieldtype": "Link",
+    "options": "Design Input",
+    "insert_after": "order_acceptance_date"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "design_manager",
+    "label": "Design Manager",
+    "fieldtype": "Link",
+    "options": "Employee",
+    "insert_after": "design_input_reference"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "design_manager_approval",
+    "label": "Design Manager Approval",
+    "fieldtype": "Check",
+    "insert_after": "design_manager"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "design_approval_date",
+    "label": "Design Approval Date",
+    "fieldtype": "Date",
+    "insert_after": "design_manager_approval"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "transmittal_generated",
+    "label": "Transmittal Auto-Generated",
+    "fieldtype": "Check",
+    "read_only": 1,
+    "insert_after": "design_approval_date"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "transmittal_to_design",
+    "label": "Transmittal to Design (Ref)",
+    "fieldtype": "Table",
+    "options": "Transmittal Document",
+    "insert_after": "transmittal_generated"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "md_approval_required",
+    "label": "MD Approval Required",
+    "fieldtype": "Check",
+    "default": 1,
+    "insert_after": "transmittal_to_design"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "md_approved",
+    "label": "MD Approved",
+    "fieldtype": "Check",
+    "insert_after": "md_approval_required"
+  },
+  {
+    "dt": "Sales Order",
+    "fieldname": "md_approval_date",
+    "label": "MD Approval Date",
+    "fieldtype": "Date",
+    "insert_after": "md_approved"
+  }
+],
+  "custom_perms": [],
+  "doctype": "Sales Order",
+  "links": [],
+  "property_setters": [],
+  "sync_on_migrate": 1
+}

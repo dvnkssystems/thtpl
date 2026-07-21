@@ -4,7 +4,7 @@
     "ref_doctype": "Work Order",
     "report_type": "Script Report",
     "is_standard": "Yes",
-    "module": "THTPL",
+    "module": "thtpl",
     "idx": 0,
     "json_fields": null,
     "prepared_report": 0,

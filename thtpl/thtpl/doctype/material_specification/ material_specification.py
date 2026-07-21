@@ -1,8 +1,0 @@
-# Copyright (c) 2025, thtpl and contributors
-# For license information, please see license.txt
-
-# import frappe
-from frappe.model.document import Document
-
-class  MaterialSpecification(Document):
-	pass

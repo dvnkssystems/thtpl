@@ -4,11 +4,11 @@
     "ref_doctype": "Batch",
     "report_type": "Query Report",
     "is_standard": "Yes",
-    "module": "THTPL",
+    "module": "thtpl",
     "idx": 0,
     "json_fields": null,
     "prepared_report": 0,
-    "query": null,
+    "query": "SELECT\n            b.name AS \"Batch ID\",\n            b.item AS \"Item Code:Link/Item\",\n            i.item_name AS \"Item Name\",\n            b.expiry_date AS \"Expiry Date:Date\",\n            b.batch_qty AS \"Batch Quantity\",\n            sle.warehouse AS \"Warehouse:Link/Warehouse\"\n        FROM\n            `tabBatch` b\n        JOIN\n            `tabItem` i ON b.item = i.item_code\n        LEFT JOIN\n            `tabStock Ledger Entry` sle ON b.name = sle.batch_no AND b.item = sle.item_code\n        WHERE\n            b.expiry_date IS NOT NULL\n            AND b.expiry_date <= CURDATE() + INTERVAL 30 DAY\n        GROUP BY\n            b.name, sle.warehouse\n        ORDER BY\n            b.expiry_date ASC",
     "roles": [
         {
             "role": "Stock Manager"

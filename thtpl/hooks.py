@@ -145,6 +145,37 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+	"Purchase Receipt": {
+		"on_submit": "thtpl.thtpl.overrides.purchase_receipt.update_po_rejected_qty",
+		"on_cancel": "thtpl.thtpl.overrides.purchase_receipt.update_po_rejected_qty",
+	}
+}
+
+# Fixtures
+# --------
+# Customizations that should travel with this app to every site it's installed on
+
+fixtures = [
+	{
+		"dt": "Custom Field",
+		"filters": [
+			[
+				"name",
+				"in",
+				[
+					"Purchase Order-total_rejected_qty",
+					"Purchase Order Item-rejected_qty",
+				],
+			]
+		],
+	},
+	{
+		"dt": "Client Script",
+		"filters": [["name", "in", ["Purchase Order Rejected Qty Highlight"]]],
+	},
+]
+
 # Scheduled Tasks
 # ---------------
 

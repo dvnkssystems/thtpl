@@ -8,7 +8,9 @@ app_license = "mit"
 # Apps
 # ------------------
 
-# required_apps = []
+# dynamic_table provides the Dynamic Table fieldtype and templates used by the fixtures below;
+# quality_addon provides the Quality Control Plan doctype they customise.
+required_apps = ["dynamic_table", "quality_addon"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -156,10 +158,47 @@ doc_events = {
 # --------
 # Customizations that should travel with this app to every site it's installed on
 
+# THTPL inspection formats (QCP and inspection reports) as Dynamic Table Templates.
+_inspection_templates = [
+	"Quality Control Plan",
+	"Hydro Test Report",
+	"Hydro Test Report - Details",
+	"Plate Inspection Report",
+	"Plate Inspection Report - Details",
+	"Dish End Inspection Report",
+	"Dish End Inspection Report - Details",
+	"Coupling Inspection Report",
+	"Coupling Inspection Report - Details",
+	"Flange Inspection Report",
+	"Flange Inspection Report - Details",
+	"Material Identification Report",
+	"Material Identification Report - Details",
+	"Stage Inspection Report",
+	"Stage Inspection Report - Details",
+	"Liquid Penetrant Testing Report",
+	"Liquid Penetrant Testing Report - Details",
+	"Radiographic Offer",
+	"Radiographic Offer - Details",
+	"Radiographic Summary",
+	"Radiographic Summary - Details",
+	"Weld Map",
+	"Weld Map - Details",
+	"Weld Summary",
+	"Weld Summary - Details",
+	"Pneumatic Test Report",
+	"Pneumatic Test Report - Details",
+	"Visual Inspection Report",
+	"Visual Inspection Report - Details",
+	"Final Inspection Report",
+	"Final Inspection Report - Details",
+	"Surface Preparation & Painting Report",
+	"Surface Preparation & Painting Report - Details",
+]
+
 fixtures = [
 	{
 		"dt": "Custom Field",
-		"filters": [
+		"or_filters": [
 			[
 				"name",
 				"in",
@@ -167,12 +206,31 @@ fixtures = [
 					"Purchase Order-total_rejected_qty",
 					"Purchase Order Item-rejected_qty",
 				],
+			],
+			["dt", "in", ["Quality Inspection", "Quality Control Plan"]],
+		],
+	},
+	{
+		"dt": "Property Setter",
+		"filters": [["doc_type", "in", ["Quality Inspection", "Quality Control Plan"]]],
+	},
+	{
+		"dt": "Client Script",
+		"filters": [
+			[
+				"name",
+				"in",
+				["Purchase Order Rejected Qty Highlight", "Adding Image field in quality inspection"],
 			]
 		],
 	},
 	{
-		"dt": "Client Script",
-		"filters": [["name", "in", ["Purchase Order Rejected Qty Highlight"]]],
+		"dt": "Print Format",
+		"filters": [["name", "in", ["Quality Inspection Print Format"]]],
+	},
+	{
+		"dt": "Dynamic Table Template",
+		"filters": [["name", "in", _inspection_templates]],
 	},
 ]
 

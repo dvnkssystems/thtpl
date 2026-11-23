@@ -1,0 +1,430 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "DA-.YYYY.-.#####",
+ "creation": "2026-11-20 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "designation",
+  "column_break_1",
+  "company",
+  "date_of_joining",
+  "employee_address",
+  "section_break_1",
+  "action_type",
+  "action_date",
+  "warning_regarding",
+  "appraisal",
+  "column_break_2",
+  "misconduct_type",
+  "misconduct_category",
+  "previous_action",
+  "section_break_2",
+  "issue",
+  "details",
+  "improvement_tasks",
+  "section_break_3",
+  "improvement_period",
+  "explanation_within",
+  "absent_since",
+  "report_within",
+  "column_break_3",
+  "suspension_from",
+  "suspension_to",
+  "valid_till",
+  "section_break_4",
+  "signatory_name",
+  "column_break_4",
+  "signatory_designation",
+  "section_break_5",
+  "acknowledged_on",
+  "response_received_on",
+  "column_break_5",
+  "employee_response",
+  "section_break_6",
+  "outcome",
+  "column_break_6",
+  "closed_on",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Absconding Notice\"",
+   "fetch_from": "employee.current_address",
+   "fetch_if_empty": 1,
+   "fieldname": "employee_address",
+   "fieldtype": "Small Text",
+   "label": "Employee Address",
+   "mandatory_depends_on": "eval:doc.action_type===\"Absconding Notice\""
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Action"
+  },
+  {
+   "fieldname": "action_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Action Type",
+   "options": "Verbal Caution\nVerbal Warning\nShow Cause Notice\nWarning Letter\nWarning Notice for Poor Performance\nSuspension\nDecision Making Leave\nAbsconding Notice",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "action_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Warning Letter\"",
+   "fieldname": "warning_regarding",
+   "fieldtype": "Select",
+   "label": "Warning Regarding",
+   "mandatory_depends_on": "eval:doc.action_type===\"Warning Letter\"",
+   "options": "Performance\nMisconduct\nLate Coming"
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Warning Notice for Poor Performance\"",
+   "fieldname": "appraisal",
+   "fieldtype": "Link",
+   "label": "Appraisal",
+   "options": "Appraisal"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "misconduct_type",
+   "fieldtype": "Link",
+   "label": "Misconduct (as per Disciplinary Policy)",
+   "options": "Misconduct Type"
+  },
+  {
+   "fetch_from": "misconduct_type.category",
+   "fetch_if_empty": 1,
+   "fieldname": "misconduct_category",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Misconduct Category",
+   "options": "\nMinor\nMajor"
+  },
+  {
+   "description": "Earlier action against the same employee, for progressive discipline.",
+   "fieldname": "previous_action",
+   "fieldtype": "Link",
+   "label": "Previous Action",
+   "options": "Disciplinary Action"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Warning Letter\"",
+   "description": "Completes the sentence \"It has been observed that you have been ___ on multiple occasions\", e.g. repeated late coming / negligence of duties.",
+   "fieldname": "issue",
+   "fieldtype": "Small Text",
+   "label": "Issue",
+   "mandatory_depends_on": "eval:doc.action_type===\"Warning Letter\""
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Verbal Caution\" || doc.action_type===\"Verbal Warning\" || doc.action_type===\"Show Cause Notice\" || doc.action_type===\"Warning Letter\" || doc.action_type===\"Suspension\" || doc.action_type===\"Decision Making Leave\"",
+   "description": "Warning Letter: list the examples (dates, deadlines, behaviour). Show Cause Notice: details of the incident, behaviour, absence or policy violation.",
+   "fieldname": "details",
+   "fieldtype": "Text Editor",
+   "label": "Details / Specific Instances",
+   "mandatory_depends_on": "eval:doc.action_type===\"Verbal Caution\" || doc.action_type===\"Verbal Warning\" || doc.action_type===\"Show Cause Notice\" || doc.action_type===\"Warning Letter\" || doc.action_type===\"Suspension\" || doc.action_type===\"Decision Making Leave\""
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Warning Notice for Poor Performance\"",
+   "fieldname": "improvement_tasks",
+   "fieldtype": "Text Editor",
+   "label": "Specific Improvement Tasks",
+   "mandatory_depends_on": "eval:doc.action_type===\"Warning Notice for Poor Performance\""
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Timelines"
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Warning Letter\" || doc.action_type===\"Warning Notice for Poor Performance\"",
+   "description": "e.g. 15 days / 2 months",
+   "fieldname": "improvement_period",
+   "fieldtype": "Data",
+   "label": "Improvement Period",
+   "mandatory_depends_on": "eval:doc.action_type===\"Warning Letter\" || doc.action_type===\"Warning Notice for Poor Performance\""
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Show Cause Notice\"",
+   "fieldname": "explanation_within",
+   "fieldtype": "Select",
+   "label": "Written Explanation Within",
+   "mandatory_depends_on": "eval:doc.action_type===\"Show Cause Notice\"",
+   "options": "\n48 hours\n3 days\n7 days"
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Absconding Notice\"",
+   "fieldname": "absent_since",
+   "fieldtype": "Date",
+   "label": "Absent Since",
+   "mandatory_depends_on": "eval:doc.action_type===\"Absconding Notice\""
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Absconding Notice\"",
+   "fieldname": "report_within",
+   "fieldtype": "Select",
+   "label": "Report to Duty Within",
+   "mandatory_depends_on": "eval:doc.action_type===\"Absconding Notice\"",
+   "options": "\n3 days\n7 days"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Suspension\"",
+   "fieldname": "suspension_from",
+   "fieldtype": "Date",
+   "label": "Suspension From",
+   "mandatory_depends_on": "eval:doc.action_type===\"Suspension\""
+  },
+  {
+   "depends_on": "eval:doc.action_type===\"Suspension\"",
+   "fieldname": "suspension_to",
+   "fieldtype": "Date",
+   "label": "Suspension To",
+   "mandatory_depends_on": "eval:doc.action_type===\"Suspension\""
+  },
+  {
+   "description": "Defaults from the Disciplinary Policy: verbal caution / verbal warning 1 month, written warning 3 months (up to 6), suspension 3 months.",
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Signatory"
+  },
+  {
+   "default": "Shreyas Shrikant Patil",
+   "fieldname": "signatory_name",
+   "fieldtype": "Data",
+   "label": "Signatory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Director",
+   "fieldname": "signatory_designation",
+   "fieldtype": "Data",
+   "label": "Signatory Designation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Employee Response"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "acknowledged_on",
+   "fieldtype": "Date",
+   "label": "Receipt Acknowledged On"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "response_received_on",
+   "fieldtype": "Date",
+   "label": "Response Received On"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "employee_response",
+   "fieldtype": "Small Text",
+   "label": "Employee's Explanation / Comments"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Outcome"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "outcome",
+   "fieldtype": "Small Text",
+   "label": "Decision / Outcome"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "label": "Closed On"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nIssued\nResponse Received\nClosed\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Disciplinary Action",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-20 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "THTPL HR",
+ "name": "Disciplinary Action",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "employee_name,action_type",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

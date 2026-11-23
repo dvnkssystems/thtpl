@@ -154,6 +154,11 @@ doc_events = {
 	}
 }
 
+# THTPL HR: Policy Acknowledgement, Disciplinary Action and ID Card Request on the Employee dashboard
+override_doctype_dashboards = {
+	"Employee": "thtpl.thtpl_hr.dashboard_overrides.get_dashboard_for_employee",
+}
+
 # Fixtures
 # --------
 # Customizations that should travel with this app to every site it's installed on

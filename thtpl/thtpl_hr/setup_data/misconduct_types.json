@@ -1,0 +1,146 @@
+[
+ {
+  "category": "Minor",
+  "description": "Reporting late to duty or leaving the workplace early, absence for less than Two consecutive days without proper approval."
+ },
+ {
+  "category": "Minor",
+  "description": "Loitering, gossiping, unnecessary gathering, or causing disturbance during working hours."
+ },
+ {
+  "category": "Minor",
+  "description": "Failure to wear prescribed uniform, safety equipment, identity card, or required dress code while on duty."
+ },
+ {
+  "category": "Minor",
+  "description": "Failure to maintain cleanliness, discipline, or proper workplace behaviour within Company premises."
+ },
+ {
+  "category": "Minor",
+  "description": "Non-compliance with routine instructions issued by supervisors, department heads, or authorized personnel."
+ },
+ {
+  "category": "Minor",
+  "description": "Unauthorized use of mobile phones, personal devices, or engaging in non-work-related activities during working hours were restricted."
+ },
+ {
+  "category": "Minor",
+  "description": "Minor violation of Company procedures, safety instructions, or operational guidelines."
+ },
+ {
+  "category": "Minor",
+  "description": "Improper handling or careless use of Company tools, equipment, machinery, materials, or resources without causing major damage or loss."
+ },
+ {
+  "category": "Major",
+  "description": "Wilful insubordination or refusal to follow lawful instructions issued by authorized supervisors or management."
+ },
+ {
+  "category": "Major",
+  "description": "Disobedience of Company rules, operational procedures, or safety instructions."
+ },
+ {
+  "category": "Major",
+  "description": "Participation in illegal strikes, stoppage of work, or disruption of Company operations."
+ },
+ {
+  "category": "Major",
+  "description": "Intentional slowing down of work, production, or operational activities."
+ },
+ {
+  "category": "Major",
+  "description": "Theft, fraud, dishonesty, or misappropriation of Company property, materials, or records."
+ },
+ {
+  "category": "Major",
+  "description": "Demanding, accepting, or offering bribes, illegal gratification, or unauthorized commission."
+ },
+ {
+  "category": "Major",
+  "description": "Habitual absence without leave or continuous absence from duty for more than four working days without approval."
+ },
+ {
+  "category": "Major",
+  "description": "Habitual violation of Company policies, standing orders, or workplace regulations."
+ },
+ {
+  "category": "Major",
+  "description": "Collection of money or conducting unauthorized trade or business activities within Company premises."
+ },
+ {
+  "category": "Major",
+  "description": "Reporting to duty under the influence of alcohol, drugs, or prohibited substances."
+ },
+ {
+  "category": "Major",
+  "description": "Fighting, threatening, abusive, violent, or disorderly behaviour within Company premises."
+ },
+ {
+  "category": "Major",
+  "description": "Wilful damage, misuse, or negligent handling of machinery, equipment, tools, vehicles, or Company assets."
+ },
+ {
+  "category": "Major",
+  "description": "Unauthorized operation of machinery, equipment, or technical systems."
+ },
+ {
+  "category": "Major",
+  "description": "Serious negligence resulting in accident, injury, safety risk, or operational loss."
+ },
+ {
+  "category": "Major",
+  "description": "Refusal to use prescribed safety equipment or violation of safety procedures."
+ },
+ {
+  "category": "Major",
+  "description": "Unauthorized disclosure or misuse of confidential Company information or documents."
+ },
+ {
+  "category": "Major",
+  "description": "Falsification of records, attendance, reports, documents, or Company information."
+ },
+ {
+  "category": "Major",
+  "description": "Harassment, intimidation, discrimination, or misconduct affecting workplace discipline and dignity."
+ },
+ {
+  "category": "Major",
+  "description": "Possession of unauthorized weapons, hazardous materials, or prohibited items within Company premises."
+ },
+ {
+  "category": "Major",
+  "description": "Sleeping during working hours while on duty, especially in operational or safety-sensitive areas causing major harm to the company."
+ },
+ {
+  "category": "Major",
+  "description": "Unauthorized entry into restricted, confidential, or operational areas of the Company."
+ },
+ {
+  "category": "Major",
+  "description": "Tampering with safety devices, machinery settings, electrical systems, or operational controls."
+ },
+ {
+  "category": "Major",
+  "description": "Refusal to cooperate during disciplinary inquiry, safety investigation, or official Company proceedings."
+ },
+ {
+  "category": "Major",
+  "description": "Misuse of Company identity, official position, authority, or organizational resources for personal benefit."
+ },
+ {
+  "category": "Major",
+  "description": "Any act or behaviour causing serious reputational, financial, operational, or safety-related harm to Thermo Heat Transfers Pvt. Ltd."
+ },
+ {
+  "category": "Major",
+  "description": "Canvassing for union membership or collection of union funds within the premises of the establishment."
+ },
+ {
+  "category": "Major",
+  "description": "Holding meetings inside the premises of the establishment without the permission of the manager."
+ },
+ {
+  "category": "Major",
+  "description": "Smoking or spitting on the premises of the establishment, where it is prohibited."
+ }
+]

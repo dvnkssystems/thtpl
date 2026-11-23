@@ -1,0 +1,395 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "IDCR-.YYYY.-.#####",
+ "creation": "2026-11-20 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "designation",
+  "column_break_1",
+  "date_of_joining",
+  "work_location",
+  "company",
+  "request_date",
+  "section_break_1",
+  "mobile_number",
+  "column_break_2",
+  "email_address",
+  "section_break_2",
+  "request_type",
+  "column_break_3",
+  "reason",
+  "section_break_3",
+  "name_to_be_printed",
+  "display_designation",
+  "column_break_4",
+  "blood_group",
+  "emergency_contact_number",
+  "section_break_4",
+  "declaration",
+  "section_break_5",
+  "request_received_by",
+  "date_received",
+  "approved_by",
+  "replacement_fee",
+  "column_break_5",
+  "id_card_issued_date",
+  "status",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fetch_if_empty": 1,
+   "fieldname": "work_location",
+   "fieldtype": "Data",
+   "label": "Work Location"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fetch_from": "employee.cell_number",
+   "fetch_if_empty": 1,
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.company_email",
+   "fetch_if_empty": 1,
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "ID Card Request Details"
+  },
+  {
+   "default": "New ID Card",
+   "fieldname": "request_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type of Request",
+   "options": "New ID Card\nReplacement (Lost/Damaged)\nUpdate Information",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.request_type!==\"New ID Card\"",
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Request",
+   "mandatory_depends_on": "eval:doc.request_type!==\"New ID Card\""
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Required Details on ID Card"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fetch_if_empty": 1,
+   "fieldname": "name_to_be_printed",
+   "fieldtype": "Data",
+   "label": "Name to be Printed",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fetch_if_empty": 1,
+   "fieldname": "display_designation",
+   "fieldtype": "Data",
+   "label": "Display Designation"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.blood_group",
+   "fetch_if_empty": 1,
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group (optional)",
+   "options": "\nA+\nA-\nB+\nB-\nAB+\nAB-\nO+\nO-"
+  },
+  {
+   "fetch_from": "employee.emergency_phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "emergency_contact_number",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Number (optional)",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Declaration"
+  },
+  {
+   "fieldname": "declaration",
+   "fieldtype": "Check",
+   "label": "I confirm that the information provided above is accurate and I agree to abide by the company policy regarding ID card issuance and replacement, including applicable penalties."
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "HR / Admin Use Only"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "request_received_by",
+   "fieldtype": "Link",
+   "label": "Request Received By",
+   "options": "User",
+   "permlevel": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "date_received",
+   "fieldtype": "Date",
+   "label": "Date Received",
+   "permlevel": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User",
+   "permlevel": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.request_type===\"Replacement (Lost/Damaged)\"",
+   "description": "₹ 250 (or as per company policy) for issuing a duplicate ID card. Recover it through Additional Salary.",
+   "fieldname": "replacement_fee",
+   "fieldtype": "Currency",
+   "label": "Penalty / Replacement Fee",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "id_card_issued_date",
+   "fieldtype": "Date",
+   "label": "ID Card Issued Date",
+   "permlevel": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nRequested\nApproved\nIssued\nCancelled",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "ID Card Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-20 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "THTPL HR",
+ "name": "ID Card Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "if_owner": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "role": "Employee",
+   "select": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "HR User",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Employee"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "employee_name,request_type",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

@@ -1,0 +1,439 @@
+{
+ "actions": [],
+ "allow_import": 0,
+ "allow_rename": 0,
+ "autoname": "POSH-.YYYY.-.####",
+ "creation": "2026-11-20 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "complaint_date",
+  "received_by",
+  "received_via",
+  "column_break_1",
+  "incident_date",
+  "incident_location",
+  "company",
+  "status",
+  "section_break_1",
+  "complainant_is_employee",
+  "complainant",
+  "complainant_name",
+  "column_break_2",
+  "complainant_relationship",
+  "complainant_contact",
+  "section_break_2",
+  "respondent_is_employee",
+  "respondent",
+  "respondent_name",
+  "column_break_3",
+  "respondent_relationship",
+  "respondent_influences_complainant",
+  "interim_measures",
+  "section_break_3",
+  "nature_of_complaint",
+  "description",
+  "witnesses",
+  "section_break_4",
+  "respondent_informed_on",
+  "preliminary_response_on",
+  "complainant_informed_on",
+  "preliminary_assessment_on",
+  "inquiry_completed_on",
+  "final_report_on",
+  "employer_action_on",
+  "column_break_4",
+  "respondent_informed_due",
+  "preliminary_response_due",
+  "complainant_informed_due",
+  "preliminary_assessment_due",
+  "inquiry_due",
+  "final_report_due",
+  "employer_action_due",
+  "section_break_5",
+  "finding",
+  "recommended_action",
+  "column_break_5",
+  "disciplinary_action",
+  "action_details",
+  "section_break_6",
+  "findings",
+  "section_break_7",
+  "appeal_filed_on",
+  "appeal_decided_on",
+  "column_break_7",
+  "appeal_due",
+  "appeal_decision",
+  "section_break_8",
+  "closed_on"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "complaint_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Complaint Received On",
+   "reqd": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "label": "Received By (IC Member)",
+   "options": "User"
+  },
+  {
+   "default": "Written Complaint",
+   "fieldname": "received_via",
+   "fieldtype": "Select",
+   "label": "Received Via",
+   "options": "Written Complaint\nEmail\nOther"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incident_date",
+   "fieldtype": "Date",
+   "label": "Date of Incident",
+   "reqd": 1
+  },
+  {
+   "fieldname": "incident_location",
+   "fieldtype": "Data",
+   "label": "Place of Incident"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Open\nUnder Inquiry\nInquiry Completed\nAction Taken\nUnder Appeal\nClosed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Complainant"
+  },
+  {
+   "default": "1",
+   "fieldname": "complainant_is_employee",
+   "fieldtype": "Check",
+   "label": "Complainant is an Employee"
+  },
+  {
+   "depends_on": "complainant_is_employee",
+   "fieldname": "complainant",
+   "fieldtype": "Link",
+   "label": "Complainant",
+   "mandatory_depends_on": "complainant_is_employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "complainant.employee_name",
+   "fetch_if_empty": 1,
+   "fieldname": "complainant_name",
+   "fieldtype": "Data",
+   "label": "Complainant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!doc.complainant_is_employee",
+   "description": "e.g. contract worker, trainee, intern, consultant, vendor, visitor, customer",
+   "fieldname": "complainant_relationship",
+   "fieldtype": "Data",
+   "label": "Relationship with Company"
+  },
+  {
+   "fieldname": "complainant_contact",
+   "fieldtype": "Data",
+   "label": "Contact Number / Email"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Respondent"
+  },
+  {
+   "default": "1",
+   "fieldname": "respondent_is_employee",
+   "fieldtype": "Check",
+   "label": "Respondent is an Employee"
+  },
+  {
+   "depends_on": "respondent_is_employee",
+   "fieldname": "respondent",
+   "fieldtype": "Link",
+   "label": "Respondent",
+   "mandatory_depends_on": "respondent_is_employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "respondent.employee_name",
+   "fetch_if_empty": 1,
+   "fieldname": "respondent_name",
+   "fieldtype": "Data",
+   "label": "Respondent Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!doc.respondent_is_employee",
+   "fieldname": "respondent_relationship",
+   "fieldtype": "Data",
+   "label": "Relationship with Company"
+  },
+  {
+   "fieldname": "respondent_influences_complainant",
+   "fieldtype": "Check",
+   "label": "Respondent is the complainant's reporting manager or influences their work"
+  },
+  {
+   "description": "Directions to stop the alleged behaviour, no direct or indirect contact with the complainant, alternate reporting during the inquiry.",
+   "fieldname": "interim_measures",
+   "fieldtype": "Small Text",
+   "label": "Interim Measures / Alternate Reporting Arrangements"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Complaint Details"
+  },
+  {
+   "fieldname": "nature_of_complaint",
+   "fieldtype": "Select",
+   "label": "Nature of Complaint",
+   "options": "\nPhysical contact or unwelcome sexual advances\nDemand or request for sexual favours\nSexually coloured remarks\nShowing pornography or sexually explicit material\nUnwelcome communication through digital channels\nAny other unwelcome physical, verbal, non-verbal, or written conduct of a sexual nature"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Complaint Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "witnesses",
+   "fieldtype": "Small Text",
+   "label": "Witnesses"
+  },
+  {
+   "description": "Due dates follow the PoSH Policy and are calculated automatically (working days use the company's default holiday list).",
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Inquiry Timeline"
+  },
+  {
+   "fieldname": "respondent_informed_on",
+   "fieldtype": "Date",
+   "label": "Respondent Informed & Directed to Stop On"
+  },
+  {
+   "fieldname": "preliminary_response_on",
+   "fieldtype": "Date",
+   "label": "Preliminary Written Response Received On"
+  },
+  {
+   "fieldname": "complainant_informed_on",
+   "fieldtype": "Date",
+   "label": "Complainant Informed of Initial Steps On"
+  },
+  {
+   "fieldname": "preliminary_assessment_on",
+   "fieldtype": "Date",
+   "label": "Preliminary Assessment Completed On"
+  },
+  {
+   "fieldname": "inquiry_completed_on",
+   "fieldtype": "Date",
+   "label": "Inquiry Completed On"
+  },
+  {
+   "fieldname": "final_report_on",
+   "fieldtype": "Date",
+   "label": "Final Report Submitted On"
+  },
+  {
+   "fieldname": "employer_action_on",
+   "fieldtype": "Date",
+   "label": "Employer Action Taken On"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "respondent_informed_due",
+   "fieldtype": "Date",
+   "label": "Due By (3 working days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "preliminary_response_due",
+   "fieldtype": "Date",
+   "label": "Due By (3 working days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "complainant_informed_due",
+   "fieldtype": "Date",
+   "label": "Due By (5 working days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "preliminary_assessment_due",
+   "fieldtype": "Date",
+   "label": "Due By (15 days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "inquiry_due",
+   "fieldtype": "Date",
+   "label": "Due By (90 days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "final_report_due",
+   "fieldtype": "Date",
+   "label": "Due By (10 days after inquiry)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employer_action_due",
+   "fieldtype": "Date",
+   "label": "Due By (60 days after report)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Findings & Recommendation"
+  },
+  {
+   "description": "Inability to prove a complaint does not automatically mean it is false.",
+   "fieldname": "finding",
+   "fieldtype": "Select",
+   "label": "Finding",
+   "options": "\nAllegations Proven\nAllegations Not Proven\nMalicious / Knowingly False Complaint"
+  },
+  {
+   "fieldname": "recommended_action",
+   "fieldtype": "Select",
+   "label": "Recommended Action",
+   "options": "\nWarning or written apology\nBond of good conduct\nTransfer\nDenial of promotion or increments\nRemoval from supervisory roles\nCancellation of work assignments\nSuspension\nTermination of employment"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "disciplinary_action",
+   "fieldtype": "Link",
+   "label": "Disciplinary Action",
+   "options": "Disciplinary Action"
+  },
+  {
+   "fieldname": "action_details",
+   "fieldtype": "Small Text",
+   "label": "Action Details"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "findings",
+   "fieldtype": "Text Editor",
+   "label": "Findings / Inquiry Report Summary"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Appeal"
+  },
+  {
+   "description": "Within 90 days of the findings / recommendations.",
+   "fieldname": "appeal_filed_on",
+   "fieldtype": "Date",
+   "label": "Appeal Filed On"
+  },
+  {
+   "fieldname": "appeal_decided_on",
+   "fieldtype": "Date",
+   "label": "Appeal Decided On"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appeal_due",
+   "fieldtype": "Date",
+   "label": "Decision Due By (5 working days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "appeal_decision",
+   "fieldtype": "Small Text",
+   "label": "Decision of the Managing Director"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "label": "Closed On"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-20 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "THTPL HR",
+ "name": "PoSH Complaint",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "permlevel": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PoSH Internal Committee",
+   "select": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "complaint_date,status",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
